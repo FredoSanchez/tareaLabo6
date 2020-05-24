@@ -42,6 +42,13 @@ public class Importancia {
 	public void setsImportancia(String sImportancia) {
 		this.sImportancia = sImportancia;
 	}
-	
+
+	public List<Contribuyente> getContribuyentes() {
+		return contribuyentes;
+	}
+
+	public void setContribuyentes(List<Contribuyente> contribuyentes) {
+		this.contribuyentes = contribuyentes;
+	}
 	
 }

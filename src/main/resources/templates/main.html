@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+	<form th:action="@{/agregarContribuyente}" th:object="${contribuyente}" method="post">
+		<select th:field="*{importancia}">
+    		<option th:each="importancia, row:${importancias}" th:value="${importancia.cImportancia}" th:text="${importancia.sImportancia}"></option>
+		</select>
+	</form>
+</body>
+</html>

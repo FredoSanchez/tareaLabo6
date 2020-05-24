@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.uca.capas.domain.Contribuyente;
 import com.uca.capas.domain.Importancia;
 import com.uca.capas.service.ImportanciaService;
 
@@ -19,12 +20,14 @@ public class MainController {
 	@RequestMapping("/inicio")
 	public ModelAndView main() {
 		ModelAndView mav = new ModelAndView();
+		Contribuyente contribuyente = new Contribuyente();
 		List<Importancia> importancias = null;
 		try {
 			importancias = importanciaService.findAll();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		mav.addObject("contribuyente", contribuyente);
 		mav.addObject("importancias", importancias);
 		mav.setViewName("main");
 		return mav;

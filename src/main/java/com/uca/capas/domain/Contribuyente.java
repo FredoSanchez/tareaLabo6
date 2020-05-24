@@ -54,6 +54,14 @@ public class Contribuyente {
 	public void setcContribuyente(Integer cContribuyente) {
 		this.cContribuyente = cContribuyente;
 	}
+	public Importancia getImportancia() {
+		return importancia;
+	}
+
+	public void setImportancia(Importancia importancia) {
+		this.importancia = importancia;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

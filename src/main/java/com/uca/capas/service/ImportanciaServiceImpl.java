@@ -1,0 +1,21 @@
+package com.uca.capas.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Service;
+
+import com.uca.capas.dao.ImportanciaDAO;
+import com.uca.capas.domain.Importancia;
+
+@Service
+public class ImportanciaServiceImpl implements ImportanciaService {
+
+	@Autowired
+	ImportanciaDAO importanciaDAO;
+	
+	@Override
+	public Importancia findOne(Integer code) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return importanciaDAO.findOne(code);
+	}
+}

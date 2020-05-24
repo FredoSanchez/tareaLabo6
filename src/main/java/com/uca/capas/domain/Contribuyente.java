@@ -14,7 +14,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(schema="public", name="contribuyente")
+@Table (schema="public", name="contribuyente")
 public class Contribuyente {
 	
 	@Id

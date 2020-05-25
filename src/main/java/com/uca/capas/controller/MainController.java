@@ -77,6 +77,14 @@ public class MainController {
 		ModelAndView mav = new ModelAndView();
 		
 		if(result.hasErrors()) {
+			List<Importancia> importancias = null;
+			try {
+				importancias = importanciaService.findAll();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			mav.addObject("contribuyente", contribuyente);
+			mav.addObject("importancias", importancias);
 			mav.setViewName("main");
 		}else {
 			contribuyenteService.insert(contribuyente);

@@ -41,6 +41,8 @@ public class ContribuyenteServiceImpl implements ContribuyenteService {
 		
 		contribuyente.setImportancia(importanciaService.findOne(contribuyente.getImportancia()));
 		*/
+		LocalDate localDate = LocalDate.now();
+		contribuyente.setFechaIngreso(localDate);
 		contribuyenteDAO.insert(contribuyente);
 	}
 

@@ -1,6 +1,9 @@
 package com.uca.capas.domain;
 
-import java.sql.Date;
+//import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,7 +47,7 @@ public class Contribuyente {
 	private String nit;
 	
 	@Column (name = "f_fecha_ingreso")
-	private Date fechaIngreso;
+	private LocalDate fechaIngreso;
 	
 	public Contribuyente() {
 		super();
@@ -82,11 +85,23 @@ public class Contribuyente {
 	public void setNit(String nit) {
 		this.nit = nit;
 	}
-	public Date getFechaIngreso() {
+	public LocalDate getFechaIngreso() {
 		return fechaIngreso;
 	}
-	public void setFechaIngreso(Date fechaIngreso) {
+	public void setFechaIngreso(LocalDate fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
-	
+
+	/*
+	public String getFechaDelegate(){
+		if(this.fechaIngreso == null){
+			return "";
+		}
+		else{
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			String shortdate = sdf.format(this.fechaIngreso.getTime());
+			return shortdate;
+		}
+	}
+	*/
 }

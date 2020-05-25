@@ -1,8 +1,10 @@
 package com.uca.capas.controller;
 
 
+//import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -39,14 +41,6 @@ public class MainController {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		LocalDate localDate = LocalDate.now();
-		//String fecha = dtf.format(localDate);
-	    
-		
-		mav.addObject("fecha_ingreso", localDate);
 		
 		
 		mav.addObject("contribuyente", contribuyente);

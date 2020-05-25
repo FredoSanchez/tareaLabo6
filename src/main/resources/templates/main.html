@@ -9,7 +9,24 @@
 		<select th:field="*{importancia}">
     		<option th:each="importancia, row:${importancias}" th:value="${importancia.cImportancia}" th:text="${importancia.sImportancia}"></option>
 		</select>
+		<br><br>
 		
+		<label>Nombre: </label>
+		<input th:field="*{nombre}" type="text">
+		<span th:errors="*{nombre}" style="color:#E81505"></span>
+		<br>
+		
+		<label>Apellido: </label>
+		<input th:field="*{apellido}" type="text">
+		<span th:errors="*{apellido}" style="color:#E81505"></span>
+		<br>
+		
+		<label>NIT: </label>
+		<input th:field="*{nit}" type="number"><br>
+		<span th:errors="*{nit}" style="color:#E81505"></span>
+		<br>
+		
+		<input type="submit" value="Guardar">
 	</form>
 	<form th:action="@{/verContribuyentes}">
     	<input type="submit" value="Ver contribuyentes">

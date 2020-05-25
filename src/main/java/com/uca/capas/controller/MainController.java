@@ -43,10 +43,10 @@ public class MainController {
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate localDate = LocalDate.now();
-		String fecha = dtf.format(localDate);
-	    System.out.println(fecha); 
+		//String fecha = dtf.format(localDate);
+	    
 		
-		mav.addObject("fecha_ingreso", fecha);
+		mav.addObject("fecha_ingreso", localDate);
 		
 		
 		mav.addObject("contribuyente", contribuyente);

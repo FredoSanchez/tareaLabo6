@@ -1,5 +1,7 @@
 package com.uca.capas.domain;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -42,7 +44,7 @@ public class Contribuyente {
 	private String nit;
 	
 	@Column (name = "f_fecha_ingreso")
-	private String fechaIngreso;
+	private Date fechaIngreso;
 	
 	public Contribuyente() {
 		super();
@@ -80,10 +82,10 @@ public class Contribuyente {
 	public void setNit(String nit) {
 		this.nit = nit;
 	}
-	public String getFechaIngreso() {
+	public Date getFechaIngreso() {
 		return fechaIngreso;
 	}
-	public void setFechaIngreso(String fechaIngreso) {
+	public void setFechaIngreso(Date fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
 	

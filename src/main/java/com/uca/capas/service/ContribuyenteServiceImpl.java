@@ -19,8 +19,8 @@ public class ContribuyenteServiceImpl implements ContribuyenteService {
 	@Autowired
 	ContribuyenteDAO contribuyenteDAO;
 	
-	@Autowired
-	ImportanciaService importanciaService;
+	//@Autowired
+	//ImportanciaService importanciaService;
 	
 	@Override
 	public List<Contribuyente> findAll() throws DataAccessException {

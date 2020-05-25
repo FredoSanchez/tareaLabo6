@@ -41,7 +41,7 @@ public class MainController {
 		}
 		
 		
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		LocalDate localDate = LocalDate.now();
 		String fecha = dtf.format(localDate);
 	    System.out.println(fecha); 
@@ -70,7 +70,7 @@ public class MainController {
 		mav.setViewName("listaContribuyentes");
 		return mav;
 	}
-	
+	/*
 	@RequestMapping("/agregarContribuyente")
 	public ModelAndView agregar(@Valid @ModelAttribute Contribuyente contribuyente, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
@@ -103,8 +103,8 @@ public class MainController {
 		
 		return mav;
 	}
+	*/
 	
-	/*
 	@PostMapping("/agregarContribuyente")
 	public ModelAndView guardar(@Valid @ModelAttribute Contribuyente contribuyente, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
@@ -116,7 +116,7 @@ public class MainController {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			LocalDate localDate = LocalDate.now();
 			String fecha = dtf.format(localDate);
 		    System.out.println(fecha); 
@@ -134,6 +134,6 @@ public class MainController {
 		
 		return mav;
 	}
-	*/
+	
 	
 }

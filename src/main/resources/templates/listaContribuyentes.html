@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Contribuyentes</title>
 </head>
 <body>
 	<table>
@@ -20,15 +20,9 @@
 				<th th:text="${contribuyente.nombre}"/>
 				<th th:text="${contribuyente.nit}"/>
 				<th th:text="${contribuyente.fechaIngreso}"/>
+				<th th:text="${contribuyente.importancia.sImportancia}"/>
 			</tr>
 		</th:block>
-		<!-- 
-		<th:block th:each="impor:${contribuyente.importancia}" >
-			<tr>
-				<th th:text="${impor.sImportancia}"/>
-			</tr>
-		</th:block>
-		-->
 	</table>
 	<br>
 	<form th:action="@{/inicio}">

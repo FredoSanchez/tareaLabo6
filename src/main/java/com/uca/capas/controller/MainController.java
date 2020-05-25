@@ -40,14 +40,14 @@ public class MainController {
 			e.printStackTrace();
 		}
 		
-		/*
+		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate localDate = LocalDate.now();
 		String fecha = dtf.format(localDate);
 	    System.out.println(fecha); 
 		
-		mav.addObject("c_fecha_ingreso", fecha);
-		*/
+		mav.addObject("fecha_ingreso", fecha);
+		
 		
 		mav.addObject("contribuyente", contribuyente);
 		mav.addObject("importancias", importancias);
@@ -83,11 +83,23 @@ public class MainController {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate localDate = LocalDate.now();
+			String fecha = dtf.format(localDate);
+		    System.out.println(fecha); 
+			
+			mav.addObject("fecha_ingreso", fecha);
 			mav.addObject("contribuyente", contribuyente);
 			mav.addObject("importancias", importancias);
+			
 			mav.setViewName("main");
 		}else {
-			contribuyenteService.insert(contribuyente);
+			try {
+				contribuyenteService.insert(contribuyente);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			contribuyente = new Contribuyente();			
 			mav.setViewName("mensaje");
 		}
 		

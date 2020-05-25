@@ -11,6 +11,8 @@
 		</select>
 		<br><br>
 		
+		<p><span th:text="${fecha_ingreso}" th:field="*{fechaIngreso}"></span></p>
+		
 		<label>Nombre: </label>
 		<input th:field="*{nombre}" type="text">
 		<span th:errors="*{nombre}" style="color:#E81505"></span>

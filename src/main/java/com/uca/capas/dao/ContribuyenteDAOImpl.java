@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
@@ -28,6 +29,7 @@ public class ContribuyenteDAOImpl implements ContribuyenteDAO {
 	}
 
 	@Override
+	@Transactional
 	public void insert(Contribuyente contribuyente) throws DataAccessException {
 		// TODO Auto-generated method stub
 		entityManager.persist(contribuyente);

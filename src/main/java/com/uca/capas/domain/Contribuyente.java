@@ -3,6 +3,7 @@ package com.uca.capas.domain;
 //import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -92,16 +93,15 @@ public class Contribuyente {
 		this.fechaIngreso = fechaIngreso;
 	}
 
-	/*
 	public String getFechaDelegate(){
 		if(this.fechaIngreso == null){
 			return "";
 		}
 		else{
-			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-			String shortdate = sdf.format(this.fechaIngreso.getTime());
-			return shortdate;
+			
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			String fecha = dtf.format(this.fechaIngreso);
+			return fecha;
 		}
 	}
-	*/
 }

@@ -32,7 +32,17 @@ public class ContribuyenteDAOImpl implements ContribuyenteDAO {
 	@Transactional
 	public void insert(Contribuyente contribuyente) throws DataAccessException {
 		// TODO Auto-generated method stub
-		entityManager.persist(contribuyente);
+		//entityManager.persist(contribuyente);
+		try {
+			if(contribuyente.getcContribuyente()==null) {
+				entityManager.persist(contribuyente);
+			}else {
+				entityManager.merge(contribuyente);
+				entityManager.flush();
+			}
+		}catch(Throwable e){
+			e.printStackTrace();
+		}
 	}
 
 }

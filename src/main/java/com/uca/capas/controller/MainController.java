@@ -71,7 +71,40 @@ public class MainController {
 		return mav;
 	}
 	
+	@RequestMapping("/agregarContribuyente")
+	public ModelAndView agregar(@Valid @ModelAttribute Contribuyente contribuyente, BindingResult result) {
+		ModelAndView mav = new ModelAndView();
+		
+		if(result.hasErrors()) {
+			
+			List<Importancia> importancias = null;
+			
+			try {
+				importancias=importanciaService.findAll();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate localDate = LocalDate.now();
+			String fecha = dtf.format(localDate);
+		    System.out.println(fecha); 
+			
+			mav.addObject("fecha_ingreso", fecha);
+			mav.addObject("importancias", importancias);
+			mav.addObject("contribuyente", contribuyente);
+			mav.setViewName("main");
+			
+		}else {
+			
+			contribuyenteService.insert(contribuyente);
+			mav.setViewName("mensaje");
+		}
+		
+		return mav;
+	}
 	
+	/*
 	@PostMapping("/agregarContribuyente")
 	public ModelAndView guardar(@Valid @ModelAttribute Contribuyente contribuyente, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
@@ -94,17 +127,13 @@ public class MainController {
 			
 			mav.setViewName("main");
 		}else {
-			try {
-				contribuyenteService.insert(contribuyente);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-			contribuyente = new Contribuyente();			
+			contribuyenteService.insert(contribuyente);
+						
 			mav.setViewName("mensaje");
 		}
 		
 		return mav;
 	}
-	
+	*/
 	
 }
